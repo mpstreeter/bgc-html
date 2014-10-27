@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h3><%= @project.title %></h3>
+
+<p> Developed by: <%= @project.authors %> </p>
+<hr>
+
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a href="#webpage" data-toggle="tab">Webpage</a></li>
+  <li><a href="#code" data-toggle="tab">Code</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="webpage">
+  	<%= @project.code.html_safe %>
+  </div>
+  <div class="tab-pane" id="code">
+	  <pre>
+	  <%= @project.code %>
+	  </pre>
+  </div>
+</div>
+
+
+
+<br/><br/><br/>
+<%= link_to 'Back', projects_path %>
